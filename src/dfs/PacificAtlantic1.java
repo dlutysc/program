@@ -26,10 +26,10 @@ public class PacificAtlantic1 {
 
     public static void main(String[] args) {
         PacificAtlantic1 pa = new PacificAtlantic1();
-        System.out.println(pa.pacificAtlantic(board));
+        System.out.println(pa.pacificAtlantic());
     }
 
-    List<List<Integer>> pacificAtlantic(int[][] board){
+    List<List<Integer>> pacificAtlantic(){
         for (int r = 0; r < rows; r++) {
             if (p[r][0] == false) dfs(r, 0, p);
             if (a[r][cols - 1] == false) dfs(r, cols - 1, a);
@@ -46,7 +46,6 @@ public class PacificAtlantic1 {
                     res.add(item);
                 }
             }
-
         }
 
         return res;
