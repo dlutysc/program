@@ -17,5 +17,8 @@ public class CloneTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        int n = 5;
+        System.out.println(1 << n);
     }
 }
