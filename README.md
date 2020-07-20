@@ -446,3 +446,81 @@ public class PacificAtlantic1 {
 }
 
 ```
+
+# 广度优先搜索
+
+## 1  二进制矩阵中的最短路径
+
+### 题目描述
+
+leetcode 1091
+
+### 解题方法
+
+```java
+{0, 0, 0}     1 2 3
+{1, 1, 0}     4 5 6
+{1, 1, 0}     7 8 9                 
+```
+
+图1是节点重复加入对列时的情况，图2是节点不重复加入对列的情况
+
+<img src="C:\Users\inch\AppData\Roaming\Typora\typora-user-images\image-20200720192715315.png" alt="image-20200720192715315" style="zoom:80%;" />图1
+
+<img src="C:\Users\inch\AppData\Roaming\Typora\typora-user-images\image-20200720192822002.png" alt="image-20200720192822002" style="zoom:80%;" />图2
+
+```java
+public class MinDistance1 {
+    // 100行 100列
+    static int[][] grids = {
+        {1, 0, 0},
+        {1, 1, 0},
+        {1, 1, 0}
+    };
+    static int[][] dir = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}, {1, 1}, {1, -1}, {-1, 1}, {-1, -1}};
+    static int rows = grids.length;
+    static int cols = grids[0].length;
+    static boolean[][] visited = new boolean[rows][cols];
+
+    static void test(){
+        // 目标是二维数组的索引
+        int minDist = minDistance(rows - 1, cols - 1);
+        System.out.println(minDist);
+    }
+
+    static int minDistance(int tr, int tc){
+        // 入口不通，直接返回 -1
+        if (grids[0][0] == 1) return -1;
+        Queue<Pair<Integer, Integer>> q = new LinkedList<>();
+        int dist = 0;
+        q.add(new Pair<>(0, 0));
+        while (!q.isEmpty()){
+            int size = q.size();
+            ++dist;
+            while (size-- > 0){
+                Pair<Integer, Integer> cur = q.poll();
+                int r = cur.getKey(), c = cur.getValue();
+                if (r == tr && c == tc) {
+                    return dist;
+                }
+                visited[r][c] = true;
+                for (int[] d : dir){
+                    int nr = r + d[0], nc = c + d[1];
+                    if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && grids[nr][nc] == 0 && visited[nr][nc] == false){
+                        q.add(new Pair<>(nr, nc));
+                        // 这个标记是避免有些节点重复的往队列里加入，如果不加此行，超时错误
+                        visited[nr][nc] =true;
+                    }
+                }
+
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        test();
+    }
+}
+```
+
