@@ -473,7 +473,7 @@ leetcode 1091
 public class MinDistance1 {
     // 100行 100列
     static int[][] grids = {
-        {1, 0, 0},
+        {0, 0, 0},
         {1, 1, 0},
         {1, 1, 0}
     };
