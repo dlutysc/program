@@ -1,4 +1,4 @@
-package dp;
+package dp.array_range;
 
 import java.util.Arrays;
 

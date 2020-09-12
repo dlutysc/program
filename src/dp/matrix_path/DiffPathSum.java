@@ -1,4 +1,4 @@
-package dp;
+package dp.matrix_path;
 
 import java.util.Arrays;
 
