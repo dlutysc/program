@@ -1,5 +1,7 @@
 package offer;
 
+import common.TreeNode;
+
 /**
  * 序列化二叉树
  *       1

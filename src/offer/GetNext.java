@@ -1,14 +1,17 @@
 package offer;
 
-class TreeNode{
-    int val;
-    TreeNode left = null;
-    TreeNode right = null;
-    TreeNode next = null;
-    TreeNode(int val){
-        this.val = val;
-    }
-}
+//class TreeNode{
+//    int val;
+//    TreeNode left = null;
+//    TreeNode right = null;
+//    TreeNode next = null;
+//    TreeNode(int val){
+//        this.val = val;
+//    }
+//}
+
+import common.TreeNode;
+
 /**
  * 剑指offer：二叉树的下一个节点
  */
