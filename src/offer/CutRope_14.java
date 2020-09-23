@@ -1,8 +1,8 @@
 package offer;
 
-public class CutRope14 {
+public class CutRope_14 {
     public static void main(String[] args) {
-        CutRope14 cutRope14 = new CutRope14();
+        CutRope_14 cutRope14 = new CutRope_14();
         System.out.println(cutRope14.maxCut(4));
     }
 

@@ -5,14 +5,14 @@ import common.TreeNode;
  *  @Author chasein
  *  @Date 2020/9/12 15:55
  *  @Description 二叉树的深度
- *  * 序列化二叉树
+ *  *
  *  *       1
  *  *     /   \
  *  *    2     3
  *  *   /     / \
  *  *  4     5   6
  */
-public class Solution38 {
+public class Solution_38 {
     public static void main(String[] args) {
         TreeNode node1 = new TreeNode(1);
         TreeNode node2 = new TreeNode(2);

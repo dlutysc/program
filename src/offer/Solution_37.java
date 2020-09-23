@@ -10,7 +10,7 @@ import common.TreeNode;
  *   /     / \
  *  4     5   6
  */
-public class Solution37 {
+public class Solution_37 {
     static int index = -1;
     public static void main(String[] args) {
         TreeNode node1 = new TreeNode(1);

@@ -3,9 +3,9 @@ package offer;
 import java.util.Scanner;
 
 /**
- *连续子数组最大和
+ *连续子数组的最大和
  */
-public class MaxSum {
+public class MaxSum_42 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()) {

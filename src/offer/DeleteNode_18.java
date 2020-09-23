@@ -13,7 +13,7 @@ import common.ListNode;
 /**
  * 剑指offer：删除链表中重复的节点
  */
-public class DeleteNode {
+public class DeleteNode_18 {
     public static void main(String[] args) {
         ListNode node1 = new ListNode(2);
         ListNode node2 = new ListNode(2);

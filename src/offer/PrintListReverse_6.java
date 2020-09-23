@@ -6,7 +6,7 @@ import common.MyList;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class PrintListReverse {
+public class PrintListReverse_6 {
     public static void main(String[] args) {
         MyList list = new MyList();
         System.out.println(printReverse(list.head));
@@ -52,26 +52,26 @@ public class PrintListReverse {
     }
 
     /**
-     * 方法3
+     * 方法2
      * @param head
      * @return
      */
-    public static ArrayList<Integer> printReverse3(ListNode head){
+    public static ArrayList<Integer> printReverse2(ListNode head){
         ArrayList<Integer> ret = new ArrayList<>();
         if (head != null) {
-            ret.addAll(printReverse3(head.next));
+            ret.addAll(printReverse2(head.next));
             ret.add(head.val);
         }
         return ret;
     }
 
     /**
-     * 方法2
+     * 方法3
      * @param head
      * @return
      */
     private static ArrayList<Integer> ret = new ArrayList<>();
-    public static ArrayList<Integer> printReverse2(ListNode head){
+    public static ArrayList<Integer> printReverse3(ListNode head){
         print(head);
         return ret;
     }

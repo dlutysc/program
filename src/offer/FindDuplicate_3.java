@@ -6,8 +6,9 @@ import java.util.Map;
 
 /**
  * 找出数组中重复的元素
+ * 找出数组中任意一个重复的数字
  */
-public class FindDuplicate {
+public class FindDuplicate_3 {
     public static void main(String[] args) {
         System.out.println("Hello World!");
         int[] array = {1, 2, 3, 4, 3, 5};
@@ -35,12 +36,16 @@ public class FindDuplicate {
         }
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < length; i++) {
-            if (map.get(numbers[i]) != null) {
-                int val = map.get(numbers[i]);
-                map.put(numbers[i], ++val);
-            }else {
-                map.put(numbers[i], 1);
-            }
+            // 旧写法
+//            if (map.get(numbers[i]) != null) {
+//                int val = map.get(numbers[i]);
+//                map.put(numbers[i], ++val);
+//            }else {
+//                map.put(numbers[i], 1);
+//            }
+
+            int value = map.getOrDefault(numbers[i], 0);
+            map.put(numbers[i], ++value);
         }
         for (Map.Entry<Integer, Integer> entry : map.entrySet()){
             if (entry.getValue() > 1){
@@ -48,6 +53,7 @@ public class FindDuplicate {
                 return true;
             }
         }
+
         return false;
     }
 

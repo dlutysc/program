@@ -2,12 +2,12 @@ package offer;
 
 import java.util.Arrays;
 
-public class Permutation {
+public class Permutation_38 {
     private static int num = 0;
     public static void main(String[] args) {
         char[] chars = {'a', 'l', 'i', 'b', 'a', 'b', 'a'};
         char[] chas = {'a', 'b', 'a'};
-        permutation(chas, 0);
+        permutation(chars, 0);
         System.out.println(num);
     }
 

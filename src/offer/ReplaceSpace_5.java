@@ -1,7 +1,7 @@
 package offer;
 
 
-public class ReplaceSpace {
+public class ReplaceSpace_5 {
     public static void main(String[] args) {
         StringBuffer str = new StringBuffer("we are happy");
         System.out.println(replaceSpace(str));

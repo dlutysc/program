@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * 使用两个栈实现队列
  */
-public class Solution9 {
+public class Solution_9 {
     public static void main(String[] args) {
         MyQueue q = new MyQueue();
         q.enqueue(1);

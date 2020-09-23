@@ -3,7 +3,7 @@ package offer;
 /**
  * 在二维数组中查找某个值
  */
-public class FindInArray {
+public class FindInArray_4 {
     public static void main(String[] args) {
         int[][] array = {
             {1,   4,  7, 11, 15},

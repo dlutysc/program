@@ -5,10 +5,10 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Solution59 {
+public class Solution_59 {
     public static void main(String[] args) {
         int[] arr = {1, 3, -1, -3, 5, 3, 6, 7};
-        Solution59 solution59 = new Solution59();
+        Solution_59 solution59 = new Solution_59();
         System.out.println(solution59.maxInDequeue(arr, 3));
 
     }

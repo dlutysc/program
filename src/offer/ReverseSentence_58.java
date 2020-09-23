@@ -4,7 +4,7 @@ package offer;
  *  @Date 2020/9/10 9:29
  *  @Description
  */
-public class ReverseSentence {
+public class ReverseSentence_58 {
     public static void main(String[] args) {
         String str = "i am a student.";
         String string = " student. a am I ";
