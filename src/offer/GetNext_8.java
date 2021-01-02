@@ -57,17 +57,17 @@ public class GetNext_8 {
             nextNode = temp;
         }
         //如果一个节点没有右子树，且是它父节点的左子节点
-        else if(node.right == null && node.next != null && node.next.left == node){
-            nextNode = node.next;
+        else if(node.right == null && node.father != null && node.father.left == node){
+            nextNode = node.father;
         }else { //没有右子树，并且还是其父节点的右子节点
-            temp = node.next;
-            while(temp != null && temp.next != null && temp.next.left != temp){
-                temp = temp.next;
+            temp = node.father;
+            while(temp != null && temp.father != null && temp.father.left != temp){
+                temp = temp.father;
             }
             //注意要判断temp != null,如果只有一个节点时temp=null,直接temp.next会出现NullPointerException
-            if(temp != null && temp.next != null){
-                nextNode = temp.next;
-            }else{
+            if(temp != null && temp.father != null){
+                nextNode = temp.father;
+            }else{ // temp是树的根节点
                 nextNode = null;
             }
         }

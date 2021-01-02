@@ -4,6 +4,7 @@ import common.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /**
@@ -36,6 +37,7 @@ public class Solution32_1 {
     public ArrayList<Integer> printTree(TreeNode root){
         ArrayList<Integer> res = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
+//        queue.remove();
         if (root == null){
             return res;
         }
@@ -48,6 +50,37 @@ public class Solution32_1 {
                 queue.add(queue.peek().right);
             }
             res.add(queue.poll().val);
+        }
+        return res;
+    }
+
+    List<List<Integer>> printTree1(TreeNode root){
+        List<List<Integer>> res = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        if (root == null){
+            return res;
+        }
+        queue.add(root);
+        int curLine = 1;
+        int nextLine = 0;
+        while (!queue.isEmpty()) {
+            if (queue.peek().left != null) {
+                queue.add(queue.peek().left);
+                ++nextLine;
+            }
+            if (queue.peek().right != null){
+                queue.add(queue.peek().right);
+                ++nextLine;
+            }
+            --curLine;
+            list.add(queue.poll().val);
+            if (curLine == 0){
+                curLine = nextLine;
+                nextLine = 0;
+                res.add(new ArrayList<>(list));
+                list.clear();
+            }
         }
         return res;
     }

@@ -10,14 +10,16 @@ public class Solution_59 {
         int[] arr = {1, 3, -1, -3, 5, 3, 6, 7};
         Solution_59 solution59 = new Solution_59();
         System.out.println(solution59.maxInDequeue(arr, 3));
-
+        String  str  = " aadaaaaaaaa";
+        str.replace("en_code", "bbb");
+        System.out.println(str);
     }
     public List<Integer> maxInDequeue(int[] array, int size){
         List<Integer> res = new ArrayList<>();
         Deque<Integer> deque = new LinkedList<>();
 
         for (int i = 0; i < size; i++) {
-            while (!deque.isEmpty() && array[deque.peekLast()] < array[i]){
+            while (!deque.isEmpty() && array[i] > array[deque.peekLast()]){
                 deque.pollLast();
             }
             deque.addLast(i);

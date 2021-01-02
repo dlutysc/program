@@ -30,7 +30,17 @@ public class Solution_37 {
         System.out.println(ans);
 
         TreeNode node = deSerialize("1,2,4,$,$,$,3,5,$,$,6,$,$");
-        System.out.println(node.left.val);
+        System.out.println(print(node));
+
+    }
+    static StringBuilder sb = new StringBuilder();
+    static String print(TreeNode node){
+        if (node != null){
+            sb.append(node.val + " ");
+            print(node.left);
+            print(node.right);
+        }
+        return sb.toString();
     }
 
     static String serialize(TreeNode root){
@@ -44,8 +54,26 @@ public class Solution_37 {
         sb.append(serialize(root.right));
         return sb.toString();
     }
-
     static TreeNode deSerialize(String str) {
+        String[] strs = str.split(",");
+        return ds(strs);
+    }
+    // index 须是全局变量
+    static TreeNode ds(String[] strs){
+        ++index;
+        if (index >= strs.length) {
+            return null;
+        }
+        TreeNode node = null;
+        if (!strs[index].equals("$")){
+            node = new TreeNode(Integer.parseInt(strs[index]));
+            node.left = ds(strs);
+            node.right = ds(strs);
+        }
+        return node;
+    }
+
+    static TreeNode deSerialize1(String str) {
         index++;
         if (index >= str.length()) {
             return null;
@@ -54,8 +82,8 @@ public class Solution_37 {
         TreeNode node = null;
         if (!strs[index].equals("$")){
             node = new TreeNode(Integer.parseInt(strs[index]));
-            node.left = deSerialize(str);
-            node.right = deSerialize(str);
+            node.left = deSerialize1(str);
+            node.right = deSerialize1(str);
         }
         return node;
     }

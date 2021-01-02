@@ -40,6 +40,8 @@ public class DoTest {
         for (ListNode item : list){
             System.out.println(item.val);
         }
+
+        int[][] dd = new int[1][-1];
     }
 
 }
