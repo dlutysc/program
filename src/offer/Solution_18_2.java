@@ -7,7 +7,7 @@ import common.MyList;
  *  @Date 2020/9/12 14:28
  *  @Description 删除链表中重复的节点
  */
-public class Solution18_2 {
+public class Solution_18_2 {
     public static void main(String[] args) {
         MyList myList = new MyList();
         System.out.println(myList.toString());

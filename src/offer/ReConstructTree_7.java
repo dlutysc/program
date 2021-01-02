@@ -14,7 +14,7 @@ public class ReConstructTree_7 {
 
     public static void main(String[] args) throws Exception{
         TreeNode root = constructTree(preOrder, inOrder);
-        Solution32_1 print = new Solution32_1();
+        Solution_32_1 print = new Solution_32_1();
         List list = print.printTree(root);
         System.out.println(list);
     }

@@ -3,7 +3,7 @@ package offer;
 import common.ListNode;
 import common.MyList;
 
-public class Solution18_1 {
+public class Solution_18_1 {
     public static void main(String[] args) {
         MyList myList = new MyList();
         ListNode delete = myList.node4;
